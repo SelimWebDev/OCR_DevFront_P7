@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Petits Plats</title>
+    <script src="https://kit.fontawesome.com/d5ff2cdc84.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="logo-contain">
+        <img src="./img/Vector.png">
+    </div>
+    <div id="title-contain">
+        <span id="title">Les petits plats</span>
+    </div>
+    <div id="input-contain">
+        <input id="search-input" type="text" value="Rechercher une recette">
+        <i class="fas fa-search fa-2x" id="search-icn"></i>
+    </div>
+    <div id="selected-filters">
+
+    </div>
+    <div id="filter-contain">
+        <button id="filter-ingredients" class="filter">
+            <div class="dropup">
+                <span>Ingrédients</span><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul id="ingredients-list" class="dropdown-list">
+                <div class="input-div">
+                    <input id="ingredient-search" class="filter-search" type="text" value="Rechercher un ingrédient" data-category="ingredients">
+                    <i id="ingredient-close" class="fas fa-chevron-up close-icn"></i>
+                </div>
+                <div class="filter-div" id="ingredients-div">
+
+                </div>
+            </ul>
+        </button>
+        <button id="filter-appareils" class="filter">
+            <div class="dropup">
+                <span>Appareils</span><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul id="appareils-list" class="dropdown-list">
+                <div class="input-div">
+                    <input id="appareil-search" class="filter-search" type="text" value="Rechercher un appareil" data-category="appliances">
+                    <i id="appareil-close" class="fas fa-chevron-up close-icn"></i>
+                </div>
+                <div class="filter-div" id="appareils-div"></div>
+            </ul>
+        </button>
+        <button id="filter-ustensiles" class="filter">
+            <div class="dropup">
+                <span>Ustensiles</span><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul id="ustensiles-list" class="dropdown-list">
+                <div class="input-div">
+                    <input id="ustensil-search" class="filter-search" type="text" value="Rechercher un ustensile" data-category="ustensils">
+                    <i id="ustensil-close" class="fas fa-chevron-up close-icn"></i>
+                </div>
+                <div class="filter-div" id="ustensiles-div"></div>
+            </ul>
+        </button>
+    </div>
+    <div id="search-result">
+
+    </div>
+    <script type="module" src="./script/page/index.js"></script>    
+</body>
+</html>

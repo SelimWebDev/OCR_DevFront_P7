@@ -1,0 +1,1 @@
+Créer un objet map pour les tagsSelected, pour pouvoir passer la catégory dans display tagsSelected, l'afficher dans le dom avec dataset
