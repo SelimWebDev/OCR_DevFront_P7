@@ -1,25 +1,34 @@
 import { filteredInputRecipes, initRecipes } from "../../state/state.js";
+import { isIncluded } from "./isIncluded.js";
 
 export function searchByInput(input){
     filteredInputRecipes.length = 0
     initRecipes.forEach(recipe => {
 
-        let match = false
-        if(recipe.name.toLowerCase().includes(input)){
-            match = true
-        } 
+        const recipeName = recipe.name.toLowerCase()
 
+        let recipeIngredient = []
         for(let i = 0; i < recipe.ingredients.length; i++){
-            if(recipe.ingredients[i].ingredient.toLowerCase().includes(input)){
-                match = true
-            }
+            recipeIngredient.push(recipe.ingredients[i].ingredient.toLowerCase())
         }
+
+        let recipeUstensils = []
         for(let i = 0; i < recipe.ustensils.length; i++){
-            if(recipe.ustensils[i].toLowerCase().includes(input)){
-                match = true
-            }
+            recipeUstensils.push(recipe.ustensils[i].toLowerCase())
         }
-        if(recipe.appliance.toLowerCase().includes(input)){
+
+        const recipeAppliance = recipe.appliance.toLowerCase()
+
+        
+        let match = false
+        
+        if(isIncluded(input, recipeName)){
+            match = true
+        } else if (recipeIngredient.forEach(ingredient => isIncluded(input, ingredient))) {
+            match = true
+        } else if(recipeUstensils.forEach(ustensil => isIncluded(input, ustensil))){
+            match = true
+        } else if (isIncluded(input, recipeAppliance)){
             match = true
         }
 
@@ -34,5 +43,6 @@ export function searchByInput(input){
                 filteredInputRecipes.push(recipe)
             }
         }
+        
     })
 }
