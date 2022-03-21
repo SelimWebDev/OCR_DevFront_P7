@@ -2,7 +2,7 @@ import { data } from '../../data/recipes.js'
 import { getInitTags } from '../utils/getInitTags.js'
 
 const initRecipes = data
-var filteredInputRecipes = []
+let filteredInputRecipes = []
 let filteredTagRecipes = []
 //let finalFilteredRecipes = []
 

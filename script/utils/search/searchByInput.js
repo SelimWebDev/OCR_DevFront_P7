@@ -2,6 +2,7 @@ import { filteredInputRecipes, initRecipes } from "../../state/state.js";
 
 export function searchByInput(input){
     filteredInputRecipes.length = 0
+
     initRecipes.forEach(recipe => {
 
         let match = false
@@ -12,16 +13,16 @@ export function searchByInput(input){
         for(let i = 0; i < recipe.ingredients.length; i++){
             if(recipe.ingredients[i].ingredient.toLowerCase().includes(input)){
                 match = true
-            }
+            } 
         }
         for(let i = 0; i < recipe.ustensils.length; i++){
             if(recipe.ustensils[i].toLowerCase().includes(input)){
                 match = true
             }
         }
-        if(recipe.appliance.toLowerCase().includes(input)){
-            match = true
-        }
+        // if(recipe.appliance.toLowerCase().includes(input)){
+        //     match = true
+        // }
 
         if(match){
             let alreadyExist = false
