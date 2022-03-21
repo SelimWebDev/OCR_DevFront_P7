@@ -15,11 +15,11 @@ export function searchByInput(input){
                 match = true
             } 
         }
-        for(let i = 0; i < recipe.ustensils.length; i++){
-            if(recipe.ustensils[i].toLowerCase().includes(input)){
-                match = true
-            }
-        }
+        // for(let i = 0; i < recipe.ustensils.length; i++){
+        //     if(recipe.ustensils[i].toLowerCase().includes(input)){
+        //         match = true
+        //     }
+        // }
         // if(recipe.appliance.toLowerCase().includes(input)){
         //     match = true
         // }
