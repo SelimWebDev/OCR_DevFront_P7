@@ -26,7 +26,7 @@ export function searchByInput(input){
             match = true
         } else if (recipeIngredient.forEach(ingredient => isIncluded(input, ingredient))) {
             match = true
-        // } else if(recipeUstensils.forEach(ustensil => isIncluded(input, ustensil))){
+        }// else if(recipeUstensils.forEach(ustensil => isIncluded(input, ustensil))){
         //     match = true
         // } 
         // else if (isIncluded(input, recipeAppliance)){
