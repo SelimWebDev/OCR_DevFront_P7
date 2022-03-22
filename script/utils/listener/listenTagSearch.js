@@ -11,9 +11,13 @@ export function listenTagSearch(){
             if(inputValue.length >= 3){
                 searchTagByInput(inputValue, category)
                 displayLiTags(category)
+                
                 listenAddTag()
-            } else displayLiTags()
+
+            } else {
+                displayLiTags()
                 listenAddTag()
+            }
         })
     }
 }

@@ -3,33 +3,23 @@ import { isIncluded } from "./isIncluded.js";
 
 export function searchByInput(input){
     filteredInputRecipes.length = 0
+
     initRecipes.forEach(recipe => {
 
         const recipeName = recipe.name.toLowerCase()
 
         let recipeIngredient = []
         for(let i = 0; i < recipe.ingredients.length; i++){
-            recipeIngredient.push(recipe.ingredients[i].ingredient.toLowerCase())
+            if(recipe.ingredients[i].ingredient.toLowerCase().includes(input)){
+                match = true
+            } 
         }
-
-        let recipeUstensils = []
-        for(let i = 0; i < recipe.ustensils.length; i++){
-            recipeUstensils.push(recipe.ustensils[i].toLowerCase())
-        }
-
-        const recipeAppliance = recipe.appliance.toLowerCase()
-
-        
-        let match = false
-        
-        if(isIncluded(input, recipeName)){
-            match = true
-        } else if (recipeIngredient.forEach(ingredient => isIncluded(input, ingredient))) {
-            match = true
-        }// else if(recipeUstensils.forEach(ustensil => isIncluded(input, ustensil))){
-        //     match = true
-        // } 
-        // else if (isIncluded(input, recipeAppliance)){
+        // for(let i = 0; i < recipe.ustensils.length; i++){
+        //     if(recipe.ustensils[i].toLowerCase().includes(input)){
+        //         match = true
+        //     }
+        // }
+        // if(recipe.appliance.toLowerCase().includes(input)){
         //     match = true
         // }
 

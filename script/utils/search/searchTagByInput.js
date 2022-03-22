@@ -1,6 +1,8 @@
 import { filteredAppTag, filteredIngTag, filteredUstTag, initTags } from "../../state/state.js";
 
 export function searchTagByInput(input, category){
+
+    
     const tags = initTags.get(category)
     filteredIngTag.length = 0
     filteredAppTag.length = 0

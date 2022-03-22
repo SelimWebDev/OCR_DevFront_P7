@@ -1,4 +1,6 @@
-export function getInitTags(recipes){
+import {initRecipes} from '../state/state.js'
+
+export function getTags(recipes){
 
     function removeDouble(arrayString){
         // on formate en minuscule pour pouvoir comparer
@@ -17,6 +19,11 @@ export function getInitTags(recipes){
     let ingredients = []
     let appareils = []
     let ustensiles = []
+
+    if(recipes.length == 0){
+        recipes = initRecipes
+    }
+
     for(let i = 0; i < recipes.length; i++){
 
         appareils.push(recipes[i].appliance)
