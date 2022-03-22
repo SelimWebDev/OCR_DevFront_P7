@@ -1,3 +1,4 @@
+import { tagFactory } from "../../factory/tagFactory.js"
 import { initRecipes, tagsSelected } from "../../state/state.js"
 import { displayRecipes } from "../display/displayRecipes.js"
 import { displayTagsSelected } from "../display/displayTagsSelected.js"
@@ -21,6 +22,7 @@ export function listenRmvTag (){
 
             displayTagsSelected()
             searchByTagsSelected()
+            tagFactory(tag, category).createTagLiDom()
 
             const inputSearch = document.getElementById('search-input')
             if(tagsSelected.get('ingredients').length == 0 

@@ -1,5 +1,7 @@
 import { tagFactory } from "../../factory/tagFactory.js";
 import { filteredAppTag, filteredIngTag, filteredUstTag, initTags } from "../../state/state.js";
+import { getTags } from "../getTags.js";
+import { setFinalRecipes } from "../setFinalRecipes.js";
 
 export function displayLiTags(category){
     let domContain
@@ -8,15 +10,19 @@ export function displayLiTags(category){
         for(let i = 0; i < domContain.length; i++){
             domContain[i].innerHTML = ""
         }
-        initTags.forEach((arrayTag, category) => {
+        const recipes = setFinalRecipes()
+        const tags = getTags(recipes)
+        tags.forEach((arrayTag, category) => {
             arrayTag.forEach(tag => tagFactory(tag, category).createTagLiDom())
         })
+
     } else if(category == 'ingredients'){
         domContain = document.getElementById('ingredients-div')
         domContain.innerHTML = ""
         filteredIngTag.forEach(tag => {
             tagFactory(tag, category).createTagLiDom()
         })
+
     } else if(category == 'appliances'){
         domContain = document.getElementById('appareils-div')
         domContain.innerHTML = ""
@@ -31,5 +37,4 @@ export function displayLiTags(category){
             tagFactory(tag, category).createTagLiDom()
         })
     }
-
 }

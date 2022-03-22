@@ -1,5 +1,5 @@
 import { data } from '../../data/recipes.js'
-import { getInitTags } from '../utils/getInitTags.js'
+import { getTags } from '../utils/getTags.js'
 
 const initRecipes = data
 let filteredInputRecipes = []
@@ -7,11 +7,15 @@ let filteredTagRecipes = []
 //let finalFilteredRecipes = []
 
 
-const initTags = getInitTags(initRecipes)
+const initTags = getTags(initRecipes)
 
 let filteredIngTag = []
 let filteredAppTag = []
 let filteredUstTag = []
+
+let updateIngTag = []
+let updateAppTag = []
+let updateUstTag = []
 
 let tagsSelected = new Map([
     ['ingredients', []],
