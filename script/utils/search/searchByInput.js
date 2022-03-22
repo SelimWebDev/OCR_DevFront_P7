@@ -1,4 +1,5 @@
 import { filteredInputRecipes, initRecipes } from "../../state/state.js";
+import { isIncluded } from "./isIncluded.js";
 
 export function searchByInput(input){
     filteredInputRecipes.length = 0
@@ -6,12 +7,12 @@ export function searchByInput(input){
     initRecipes.forEach(recipe => {
 
         let match = false
-        if(recipe.name.toLowerCase().includes(input)){
+        if(isIncluded(input, recipe.name)){
             match = true
         } 
 
         for(let i = 0; i < recipe.ingredients.length; i++){
-            if(recipe.ingredients[i].ingredient.toLowerCase().includes(input)){
+            if(isIncluded(input, recipe.ingredients[i].ingredient)){
                 match = true
             } 
         }

@@ -4,6 +4,7 @@ import { searchByInput } from "../search/searchByInput.js"
 import { setFinalRecipes } from "../setFinalRecipes.js"
 import { displayLiTags } from '../display/displayLiTags.js'
 import { getTags } from "../getTags.js"
+import { listenAddTag } from "./listenAddTag.js"
 
 
 export function listenInputSearch(){
@@ -28,10 +29,13 @@ export function listenInputSearch(){
             tags.get('ustensils').forEach(tag => filteredUstTag.push(tag))
             displayLiTags('ustensils')
 
+            listenAddTag()
+
         } else {             //sinon affiche initial
             displayRecipes(initRecipes)
             
             displayLiTags()
+            listenAddTag()
         }
     })
 }
